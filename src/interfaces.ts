@@ -6,8 +6,8 @@ interface PlayerData {
     Favorability: number;//好感度
     LastFeedTime: string;//上次投喂时间
     LastGivenTime: string;//上次投喂时间
-    FeedTimes: number;//当前总投喂次数
-    GivenTimes: number;//当前总给予次数
+    FeedCounter: number;//当前总投喂次数
+    GivenCounter: number;//当前总给予次数
 }
 
 interface Item{
@@ -24,9 +24,9 @@ interface Action{
 
 interface BotEvent{
     EventTitle:string;
-    EventTrigger:Trigger[];
+    EventTriggers:Trigger[];
     EventActions:Action[];
-    EventRate:number;
+    EventChance:number;
 }
 
 interface Trigger{
@@ -50,4 +50,14 @@ enum TriggerType{
     OnFeedFood,
     OnGiftItem,
     OnInteract
+}
+
+enum TriggerArguments{
+    SigninCombo,
+    SinginTimes,
+    Favorability,
+    LastFeedTime,
+    LastGivenTime,
+    FeedCounter,
+    GivenCounter,
 }
